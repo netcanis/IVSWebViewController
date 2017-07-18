@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		00B04148CCFD8899F04B533B50ACA68C /* IVSWebViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 04480316E4FB05DF2A0C0C260D3F9309 /* IVSWebViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D77C3162FB0EF671FAE0A1C828CB313 /* Pods-IVSWebViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B000AED0C71225DCB07524C55BDF2D2 /* Pods-IVSWebViewController_Example-dummy.m */; };
-		0E2F459BD47BB59BE2C0E446EC199E1B /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B9D0BA2C8F5D52BC6426048EF8D16 /* ReplaceMe.m */; };
 		322113C6619FB599F0402FD9551AB9EB /* IVSWebViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 080A64E61646B3F36AF108A6C84F9A2D /* IVSWebViewController-dummy.m */; };
 		3C47A0F0045D970968EF0820B78C2AE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		480189121F1D9B5C00AE0DB8 /* IVSWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 480189101F1D9B5C00AE0DB8 /* IVSWebViewController.h */; };
-		480189131F1D9B5C00AE0DB8 /* IVSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480189111F1D9B5C00AE0DB8 /* IVSWebViewController.m */; };
+		480189161F1DAB4D00AE0DB8 /* IVSWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 480189141F1DAB4D00AE0DB8 /* IVSWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		480189171F1DAB4D00AE0DB8 /* IVSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480189151F1DAB4D00AE0DB8 /* IVSWebViewController.m */; };
 		4F557C317C21504E7304265ACE574E51 /* Pods-IVSWebViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6F3BF5F8F8CE317F5D1AD3880357130 /* Pods-IVSWebViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C4E6F905809ABB664D6BD30A008A2F8 /* Pods-IVSWebViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72665A529B56444051B261181C781829 /* Pods-IVSWebViewController_Tests-dummy.m */; };
 		96137B546931E6973A01090444F3EFA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
@@ -38,11 +37,11 @@
 		08E52E316FF3E34982716ECEFF71550A /* Pods_IVSWebViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IVSWebViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8F8CAD74BAA0BF547EE789D72200F4 /* Pods-IVSWebViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IVSWebViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
 		145D02F0F541947B3050335F38EBEAA6 /* Pods-IVSWebViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-IVSWebViewController_Example.modulemap"; sourceTree = "<group>"; };
-		216B9D0BA2C8F5D52BC6426048EF8D16 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		331EFAC8529C2EC87AC861403B255328 /* Pods-IVSWebViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IVSWebViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		35D00B9D74826056230BDE6ABB00EFEA /* Pods-IVSWebViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IVSWebViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		480189101F1D9B5C00AE0DB8 /* IVSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVSWebViewController.h; sourceTree = "<group>"; };
-		480189111F1D9B5C00AE0DB8 /* IVSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVSWebViewController.m; sourceTree = "<group>"; };
+		480189141F1DAB4D00AE0DB8 /* IVSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVSWebViewController.h; sourceTree = "<group>"; };
+		480189151F1DAB4D00AE0DB8 /* IVSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVSWebViewController.m; sourceTree = "<group>"; };
+		480189191F1DAB6600AE0DB8 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		56D542270D8A4CA338819D300EDFF145 /* Pods-IVSWebViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IVSWebViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		5B000AED0C71225DCB07524C55BDF2D2 /* Pods-IVSWebViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IVSWebViewController_Example-dummy.m"; sourceTree = "<group>"; };
 		72665A529B56444051B261181C781829 /* Pods-IVSWebViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IVSWebViewController_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -133,20 +132,28 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		66CD5F29384BDD28DCC8011F7534C1D5 /* Classes */ = {
+		480189181F1DAB6600AE0DB8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				480189101F1D9B5C00AE0DB8 /* IVSWebViewController.h */,
-				480189111F1D9B5C00AE0DB8 /* IVSWebViewController.m */,
-				216B9D0BA2C8F5D52BC6426048EF8D16 /* ReplaceMe.m */,
+				480189191F1DAB6600AE0DB8 /* .gitkeep */,
 			);
-			path = Classes;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		4801891A1F1DAB6600AE0DB8 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		74FE800FE516D72511FCE04823A6D63D /* IVSWebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				66CD5F29384BDD28DCC8011F7534C1D5 /* Classes */,
+				480189181F1DAB6600AE0DB8 /* Assets */,
+				4801891A1F1DAB6600AE0DB8 /* Private */,
+				480189141F1DAB4D00AE0DB8 /* IVSWebViewController.h */,
+				480189151F1DAB4D00AE0DB8 /* IVSWebViewController.m */,
 			);
 			path = IVSWebViewController;
 			sourceTree = "<group>";
@@ -243,8 +250,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480189161F1DAB4D00AE0DB8 /* IVSWebViewController.h in Headers */,
 				00B04148CCFD8899F04B533B50ACA68C /* IVSWebViewController-umbrella.h in Headers */,
-				480189121F1D9B5C00AE0DB8 /* IVSWebViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480189171F1DAB4D00AE0DB8 /* IVSWebViewController.m in Sources */,
 				322113C6619FB599F0402FD9551AB9EB /* IVSWebViewController-dummy.m in Sources */,
-				0E2F459BD47BB59BE2C0E446EC199E1B /* ReplaceMe.m in Sources */,
-				480189131F1D9B5C00AE0DB8 /* IVSWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
