@@ -1,0 +1,16 @@
+PODS:
+  - IVSWebViewController (0.1.0)
+
+DEPENDENCIES:
+  - IVSWebViewController (from `../`)
+
+EXTERNAL SOURCES:
+  IVSWebViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  IVSWebViewController: 5e4edf9d9e7bd4b09c404ecdae90cfdd549cdcc9
+
+PODFILE CHECKSUM: 2d40e610fb041d873ce48ff6c97328514d9564e2
+
+COCOAPODS: 1.1.1

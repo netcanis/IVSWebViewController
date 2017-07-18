@@ -1,0 +1,6 @@
+framework module IVSWebViewController {
+  umbrella header "IVSWebViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

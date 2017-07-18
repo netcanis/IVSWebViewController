@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'IVSWebViewController_Example' do
+  pod 'IVSWebViewController', :path => '../'
+
+  target 'IVSWebViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
