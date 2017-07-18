@@ -34,7 +34,7 @@ TODO: Add long description of the pod here.
 
   #s.public_header_files = 'IVSWebViewController/*.h'
 
-  s.private_header_files = 'IVSWebViewController/Private/*.h'
+  #s.private_header_files = 'IVSWebViewController/Private/*.h'
 
   s.source_files = 'IVSWebViewController/**/*.{h,m,mm}'
 
