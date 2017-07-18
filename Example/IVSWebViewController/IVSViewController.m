@@ -30,9 +30,8 @@
 
 - (IBAction)onOpenWebSite:(id)sender
 {
-    UIButton *button = (UIButton *)sender;
-    NSString *url = button.titleLabel.text;
-    IVSWebViewController *vc = [[IVSWebViewController alloc] init];
+
+    NSString *url = @"https://www.dcgworld.com";    IVSWebViewController *vc = [[IVSWebViewController alloc] init];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
     [vc loadURLString:url];
     [self presentViewController:navi animated:YES completion:nil];

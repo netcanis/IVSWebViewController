@@ -32,10 +32,10 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
 
-  #s.public_header_files = 'Pod/Classes/**/*.h'
-
-  s.private_header_files = 'IVSWebViewController/*.h'
+  #s.public_header_files = 'IVSWebViewController/*.h'
+  s.private_header_files = 'IVSWebViewController/Private/*.h'
   s.source_files = 'IVSWebViewController/**/*.{h,m,mm}'
+
 
   # s.resource_bundles = {
   #   'IVSWebViewController' => ['IVSWebViewController/Assets/*.png']
@@ -45,5 +45,6 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-
+    s.library = 'c++'
+    s.frameworks    = 'Foundation', 'UIKit', 'QuartzCore'
 end

@@ -31,6 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Hiding top bar of navigation controller
+    if (nil != self.navigationController) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +73,8 @@
         [self.webView removeObserver:self forKeyPath:@"title"];
     }
 }
+
+
 
 /*
  #pragma mark -
@@ -351,45 +358,16 @@
     // Create close button
     CGFloat btnSize = 24.0f;
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    closeBtn.frame = CGRectMake(btnSize, btnSize, btnSize, btnSize);
+    closeBtn.frame = CGRectMake(0, 20, btnSize, btnSize);
     closeBtn.layer.cornerRadius = btnSize / 2.0f;
     closeBtn.layer.borderWidth = 1;
     closeBtn.layer.borderColor = [UIColor colorWithRed:179.0/255.0 green:179.0/255.0 blue:179.0/255.0 alpha:1.0].CGColor;
     [closeBtn setTitleColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     closeBtn.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
     [closeBtn setTitle:@"X" forState:UIControlStateNormal];
-    //[closeBtn.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0]];
     [newWebView addSubview:closeBtn];
     [closeBtn addTarget:self action:@selector(onDone:) forControlEvents:UIControlEventTouchUpInside];
     closeBtn.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint * c_1 =[NSLayoutConstraint constraintWithItem:newWebView
-                                                           attribute:NSLayoutAttributeRight
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:closeBtn
-                                                           attribute:NSLayoutAttributeRight
-                                                          multiplier:1.0 constant:4];
-    NSLayoutConstraint * c_2 =[NSLayoutConstraint constraintWithItem:newWebView
-                                                           attribute:NSLayoutAttributeTop
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:closeBtn
-                                                           attribute:NSLayoutAttributeTop
-                                                          multiplier:1.0 constant:-1*4];
-    NSLayoutConstraint * equal_w = [NSLayoutConstraint constraintWithItem:closeBtn
-                                                                attribute:NSLayoutAttributeWidth
-                                                                relatedBy:NSLayoutRelationEqual
-                                                                   toItem:nil
-                                                                attribute:0
-                                                               multiplier:1.0
-                                                                 constant:btnSize];
-    NSLayoutConstraint * equal_h = [NSLayoutConstraint constraintWithItem:closeBtn
-                                                                attribute:NSLayoutAttributeHeight
-                                                                relatedBy:NSLayoutRelationEqual
-                                                                   toItem:nil
-                                                                attribute:0
-                                                               multiplier:1.0
-                                                                 constant:btnSize];
-    [newWebView addConstraints:@[c_1,c_2]];
-    [closeBtn addConstraints:@[equal_w,equal_h]];
     
     return newWebView;
 }
@@ -421,43 +399,15 @@
     }
 }
 
-
-
-
-//#pragma mark -
-//#pragma mark - Clipboard Util
-//
-//- (void)copyString
-//{
-//    NSString *selection = [self.webView stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
-//    [[UIPasteboard generalPasteboard] setString:selection];
-//}
-//
-//- (void)cutString
-//{
-//    NSString *selection = [self.webView stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
-//    [self.webView stringByEvaluatingJavaScriptFromString:@"document.execCommand('delete', false, null)"];
-//    [UIPasteboard generalPasteboard].string = selection;
-//}
-//
-//- (void)pasteString
-//{
-//    NSString *text = [UIPasteboard generalPasteboard].string;
-//    [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.execCommand('insertHTML', false, '%@')", text]];
-//    [UIPasteboard generalPasteboard].string = @"";
-//}
-//
-
-
-
-+ (BOOL) isiPad
+- (BOOL)isModal
 {
-    static BOOL isIPad = NO;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        isIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
-    });
-    return isIPad;
+    if([self presentingViewController])
+        return YES;
+    if([[[self navigationController] presentingViewController] presentedViewController] == [self navigationController])
+        return YES;
+    if([[[self tabBarController] presentingViewController] isKindOfClass:[UITabBarController class]])
+        return YES;
+    return NO;
 }
 
 @end
