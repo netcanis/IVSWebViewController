@@ -27,9 +27,9 @@
                                     <constraint firstAttribute="height" constant="30" id="An4-dV-2Cp"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="https://www.google.com"/>
+                                <state key="normal" title="https://www.dcgworld.com"/>
                                 <connections>
-                                    <action selector="onOpenWebSite" destination="whP-gf-Uak" eventType="touchUpInside" id="7sf-e3-kB8"/>
+                                    <action selector="onOpenWebSite:" destination="whP-gf-Uak" eventType="touchUpInside" id="83h-f3-kgN"/>
                                 </connections>
                             </button>
                         </subviews>

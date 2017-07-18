@@ -7,7 +7,7 @@
 //
 
 #import "IVSViewController.h"
-#import <IVSWebViewController/IVSWebViewController.h>
+#import <IVSWebViewController/IVSWebViewHelper.h>
 
 
 @interface IVSViewController ()
@@ -28,16 +28,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onOpenWebSite
+- (IBAction)onOpenWebSite:(id)sender
 {
-    NSLog(@"");
-    //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //IVSWebViewController *vc = [sb instantiateViewControllerWithIdentifier:@"IVSWebViewController"];
-    
+    UIButton *button = (UIButton *)sender;
+    NSString *url = button.titleLabel.text;
     IVSWebViewController *vc = [[IVSWebViewController alloc] init];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
-    [vc loadURLString:@"https://www.google.com"];
-    vc.FIX_STATUSBAR_OVERLAPPING = YES;
+    [vc loadURLString:url];
     [self presentViewController:navi animated:YES completion:nil];
 }
 

@@ -10,8 +10,6 @@
 
 @interface IVSWebViewController : UIViewController
 
-@property (nonatomic, assign) BOOL FIX_STATUSBAR_OVERLAPPING;
-
 
 - (void)loadURL:(NSURL *)URL;
 - (void)loadURLString:(NSString *)urlString;

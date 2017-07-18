@@ -31,14 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    if (YES == self.FIX_STATUSBAR_OVERLAPPING) {
-        UIView *statusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
-        [statusBarBackground setBackgroundColor:[UIColor colorWithRed:0.90 green:0.89 blue:0.90 alpha:1.00]];
-        statusBarBackground.tag = 13;
-        [self.navigationController.view addSubview:statusBarBackground];
-        [self.navigationController.view bringSubviewToFront:self.navigationController.navigationBar];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,22 +50,7 @@
 
 - (void)viewWillLayoutSubviews
 {
-    if (YES == self.FIX_STATUSBAR_OVERLAPPING) {
-        self.view.clipsToBounds = YES;
-        CGRect screenRect = [[UIScreen mainScreen] bounds];
-        CGFloat screenHeight = 0.0;
-        UIDeviceOrientation statusBarOrientation = (UIDeviceOrientation)[[UIApplication sharedApplication] statusBarOrientation];
-        if(UIDeviceOrientationIsPortrait(statusBarOrientation))
-            screenHeight = screenRect.size.height;
-        else
-            screenHeight = screenRect.size.width;
-        CGRect screenFrame = CGRectMake(0, 20, self.view.frame.size.width,screenHeight-20);
-        CGRect viewFr = [self.view convertRect:self.view.frame toView:nil];
-        if (!CGRectEqualToRect(screenFrame, viewFr)) {
-            self.view.frame = screenFrame;
-            self.view.bounds = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        }
-    }
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -288,7 +265,6 @@
 
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
 {
-    
     if (NO == navigationAction.targetFrame.isMainFrame) {
         [self createNewWebview:navigationAction.request];
     }
@@ -297,7 +273,6 @@
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
 {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"alert" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
@@ -308,7 +283,6 @@
 
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler
 {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"alert" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(YES);
@@ -324,7 +298,6 @@
 
 - (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * __nullable result))completionHandler
 {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:prompt message:defaultText preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.textColor = [UIColor blackColor];
