@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'IVSWebViewController'
   s.version          = '0.1.0'
-  s.summary          = 'WKWebViewController'
+  s.summary          = 'WKWebViewController is an WKWebView library for Objective-C'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+#  s.description      = <<-DESC
+#TODO: Add long description of the pod here.
+#                       DESC
 
   s.homepage         = 'https://github.com/netcanis/IVSWebViewController'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -28,12 +28,14 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/netcanis/IVSWebViewController.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '9.0'
+  #s.platform     = :ios, '9.0'
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
 
   #s.public_header_files = 'IVSWebViewController/*.h'
-  s.private_header_files = 'IVSWebViewController/Private/*.h'
+
+  #s.private_header_files = 'IVSWebViewController/Private/*.h'
+
   s.source_files = 'IVSWebViewController/**/*.{h,m,mm}'
 
 
@@ -45,6 +47,6 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-    s.library = 'c++'
+  #s.library = 'c++'
     s.frameworks    = 'Foundation', 'UIKit', 'QuartzCore'
 end
