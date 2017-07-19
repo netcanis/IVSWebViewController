@@ -9,7 +9,18 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```objc
+IVSWebViewController *vc = [[IVSWebViewController alloc] init];
+UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+[vc loadURLString:@"https://www.google.com"];
+[self presentViewController:navi animated:YES completion:nil];
+```
+
+
 ## Requirements
+- Base SDK: iOS 10
+- Deployment Target: iOS 9.0 or greater
+- Xcode 8.x
 
 ## Installation
 
