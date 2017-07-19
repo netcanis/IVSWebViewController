@@ -7,7 +7,7 @@
 //
 
 #import "IVSViewController.h"
-#import <IVSWebViewController/IVSWebViewHelper.h>
+#import <IVSWebViewController.h>
 
 
 @interface IVSViewController ()
