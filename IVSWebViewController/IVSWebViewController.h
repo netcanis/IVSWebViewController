@@ -2,7 +2,7 @@
 //  IVSWebViewController.h
 //  Pods
 //
-//  Created by Sung Hwan Cho on 18/07/2017.
+//  Created by netcanis on 18/07/2017.
 //
 //
 
@@ -20,5 +20,6 @@
 - (void)loadHTMLString:(NSString *)htmlContent;
 
 - (BOOL)externalAppRequiredToOpenURL:(NSURL *)URL;
+- (BOOL)isModal;
 
 @end

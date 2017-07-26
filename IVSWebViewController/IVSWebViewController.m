@@ -2,7 +2,7 @@
 //  IVSWebViewController.m
 //  Pods
 //
-//  Created by Sung Hwan Cho on 18/07/2017.
+//  Created by netcanis on 18/07/2017.
 //
 //
 
@@ -29,7 +29,8 @@
 
 @implementation IVSWebViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
@@ -52,11 +53,13 @@
     [self createRefreshControl];
 }
 
-- (BOOL)prefersStatusBarHidden {
+- (BOOL)prefersStatusBarHidden
+{
     return self.statusBarHidden;
 }
 
-- (void)viewWillLayoutSubviews {
+- (void)viewWillLayoutSubviews
+{
     if (NO == self.statusBarHidden && NO == self.navigationBarHidden && NO == self.statusBarOverlapping) {
         self.view.clipsToBounds = YES;
         CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -76,12 +79,14 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:YES];
     
     if (nil != self.navigationController) {
@@ -252,20 +257,11 @@
     WKBackForwardList *backForwardList = self.webView.backForwardList;
     if (backForwardList.backList.count > 0) {
         WKBackForwardListItem *item = [backForwardList itemAtIndex:-1];
-        NSLog(@"%@-----%@",item.title,item.URL);
+        NSLog(@"%@ ----- %@",item.title,item.URL);
         [self.webView goToBackForwardListItem:item];
     }else {
         [self.navigationController popViewControllerAnimated:YES];
     }
-}
-
-
-#pragma mark -
-#pragma mark - URL scheme
-
-- (BOOL)externalAppRequiredToOpenURL:(NSURL *)URL {
-    NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https"]];
-    return ![validSchemes containsObject:URL.scheme];
 }
 
 
@@ -436,6 +432,16 @@
         }
         [newWebView removeFromSuperview];
     }
+}
+
+
+#pragma mark -
+#pragma mark - util
+
+- (BOOL)externalAppRequiredToOpenURL:(NSURL *)URL
+{
+    NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https"]];
+    return ![validSchemes containsObject:URL.scheme];
 }
 
 - (BOOL)isModal
