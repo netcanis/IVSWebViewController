@@ -19,4 +19,6 @@
 - (void)loadHTMLFile:(NSString *)fileName;
 - (void)loadHTMLString:(NSString *)htmlContent;
 
+- (BOOL)externalAppRequiredToOpenURL:(NSURL *)URL;
+
 @end
