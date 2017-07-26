@@ -38,7 +38,7 @@
         [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
     
-    if (NO == self.statusBarHidden && YES == self.disabledStatusBarOverlapping) {
+    if (NO == self.statusBarHidden && NO == self.navigationBarHidden && NO == self.statusBarOverlapping) {
         self.automaticallyAdjustsScrollViewInsets = YES;
         self.edgesForExtendedLayout = UIRectEdgeNone;
         
@@ -57,7 +57,7 @@
 }
 
 - (void)viewWillLayoutSubviews {
-    if (NO == self.statusBarHidden && YES == self.disabledStatusBarOverlapping) {
+    if (NO == self.statusBarHidden && NO == self.navigationBarHidden && NO == self.statusBarOverlapping) {
         self.view.clipsToBounds = YES;
         CGRect screenRect = [[UIScreen mainScreen] bounds];
         CGFloat screenHeight = 0.0;

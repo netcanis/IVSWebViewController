@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign) BOOL navigationBarHidden;
 @property (nonatomic, assign) BOOL statusBarHidden;
-@property (nonatomic, assign) BOOL disabledStatusBarOverlapping;
+@property (nonatomic, assign) BOOL statusBarOverlapping;
 
 - (void)loadURL:(NSURL *)URL;
 - (void)loadURLString:(NSString *)urlString;

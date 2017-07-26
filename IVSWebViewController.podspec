@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IVSWebViewController'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'WKWebViewController is an WKWebView library for Objective-C'
 
 # This description is used to generate tags and improve search results.
