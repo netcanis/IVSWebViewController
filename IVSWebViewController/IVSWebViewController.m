@@ -20,9 +20,10 @@
 >
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) WKWebViewConfiguration *configuration;
-//@property (nonatomic, strong) WKBackForwardList *bfList;
+
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 
@@ -33,8 +34,45 @@
     // Do any additional setup after loading the view.
     
     // Hiding top bar of navigation controller
-    if (nil != self.navigationController) {
+    if (nil != self.navigationController && YES == self.navigationBarHidden) {
         [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+    
+    if (NO == self.statusBarHidden && YES == self.disabledStatusBarOverlapping) {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+        UIView *statusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+        [statusBarBackground setBackgroundColor:[UIColor colorWithRed:0.90 green:0.89 blue:0.90 alpha:1.00]];
+        statusBarBackground.tag = 13;
+        [self.navigationController.view addSubview:statusBarBackground];
+        [self.navigationController.view bringSubviewToFront:self.navigationController.navigationBar];
+    }
+    
+    [self createRefreshControl];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return self.statusBarHidden;
+}
+
+- (void)viewWillLayoutSubviews {
+    if (NO == self.statusBarHidden && YES == self.disabledStatusBarOverlapping) {
+        self.view.clipsToBounds = YES;
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenHeight = 0.0;
+        UIDeviceOrientation statusBarOrientation = (UIDeviceOrientation)[[UIApplication sharedApplication] statusBarOrientation];
+        if(UIDeviceOrientationIsPortrait(statusBarOrientation))
+            screenHeight = screenRect.size.height;
+        else
+            screenHeight = screenRect.size.width;
+        CGRect screenFrame = CGRectMake(0, 20, self.view.frame.size.width,screenHeight-20);
+        CGRect viewFr = [self.view convertRect:self.view.frame toView:nil];
+        if (!CGRectEqualToRect(screenFrame, viewFr))
+        {
+            self.view.frame = screenFrame;
+            self.view.bounds = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        }
     }
 }
 
@@ -45,7 +83,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    [self.navigationController.navigationBar addSubview:self.progressView];
+    
+    if (nil != self.navigationController) {
+        [self.navigationController.navigationBar addSubview:self.progressView];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -53,15 +94,13 @@
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillLayoutSubviews
-{
-
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:YES];
-    [self.progressView removeFromSuperview];
+    
+    if (nil != self.progressView) {
+        [self.progressView removeFromSuperview];
+    }
 }
 
 - (void)dealloc

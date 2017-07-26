@@ -10,6 +10,9 @@
 
 @interface IVSWebViewController : UIViewController
 
+@property (nonatomic, assign) BOOL navigationBarHidden;
+@property (nonatomic, assign) BOOL statusBarHidden;
+@property (nonatomic, assign) BOOL disabledStatusBarOverlapping;
 
 - (void)loadURL:(NSURL *)URL;
 - (void)loadURLString:(NSString *)urlString;
